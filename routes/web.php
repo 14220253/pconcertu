@@ -27,7 +27,23 @@ use App\Http\Controllers\{
 };
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('portal');
+});
+
+Route::get('/index', function () {
+    return view('index');
+});
+
+Route::get('/merchs', function () {
+    return view('merchs');
+});
+
+Route::get('/transactionHistory', function () {
+    return view('transactionHistory');
+});
+
+Route::get('/comment', function () {
+    return view('comment');
 });
 
 Route::resource('event', EventController::class);
