@@ -12,6 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('merch_order_details', function (Blueprint $table) {
+            $table->foreignId('merch_id')->constrained('merches');
+
             $table->id();
             $table->timestamps();
         });

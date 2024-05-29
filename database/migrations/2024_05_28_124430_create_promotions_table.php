@@ -12,6 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('promotions', function (Blueprint $table) {
+            $table->longText('tandc');
+            $table->integer('amount');
+            $table->string('code');
+            $table->integer('periods');
+
             $table->id();
             $table->timestamps();
         });

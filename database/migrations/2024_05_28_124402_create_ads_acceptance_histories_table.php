@@ -12,6 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ads_acceptance_histories', function (Blueprint $table) {
+            $table->string('status');
+
             $table->id();
             $table->timestamps();
         });

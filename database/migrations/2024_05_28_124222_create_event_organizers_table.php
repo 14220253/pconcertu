@@ -12,6 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('event_organizers', function (Blueprint $table) {
+            $table->longText('name');
+            $table->string('email');
+            $table->string('phone', 20);
+            $table->longText('password');
+
             $table->id();
             $table->timestamps();
         });

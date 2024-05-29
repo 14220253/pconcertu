@@ -12,6 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ticket_types', function (Blueprint $table) {
+            $table->longText('name');
+
             $table->id();
             $table->timestamps();
         });

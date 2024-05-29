@@ -12,6 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ads', function (Blueprint $table) {
+            $table->string('title');
+            $table->longText('description');
+
             $table->id();
             $table->timestamps();
         });

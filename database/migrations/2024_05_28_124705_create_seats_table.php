@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
+            $table->boolean('status');
+            $table->foreignId('ticket_type_id')->constrained('ticket_types');
             $table->timestamps();
         });
     }

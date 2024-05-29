@@ -12,6 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ticket_order_details', function (Blueprint $table) {
+            $table->foreignId('customer_id')->constrained('customers');
+            $table->foreignId('ticket_id')->constrained('tickets');
+            $table->foreignId('ticket_type_id')->constrained('ticket_types');
+            $table->foreignId('seat_id')->constrained('seats');
+
             $table->id();
             $table->timestamps();
         });

@@ -12,6 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ads_details', function (Blueprint $table) {
+            $table->integer('periods');
+            $table->string('ads_status');
+            $table->bigInteger('price');
+
             $table->id();
             $table->timestamps();
         });

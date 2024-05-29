@@ -12,6 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('guest_details', function (Blueprint $table) {
+            $table->string('role');
+
             $table->id();
             $table->timestamps();
         });

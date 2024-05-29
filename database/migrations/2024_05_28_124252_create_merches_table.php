@@ -12,6 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('merches', function (Blueprint $table) {
+            $table->json('size');
+            $table->json('color');
+            $table -> json('variation');
+            $table->integer('stock');
+            $table->longText('description');
+            $table->foreignId('event_id')->constrained('events');
+
             $table->id();
             $table->timestamps();
         });
