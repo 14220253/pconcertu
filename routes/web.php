@@ -23,7 +23,6 @@ use App\Http\Controllers\{
     AdsAcceptanceHistoryController,
     MasterEventController,
     AdsDetailController
-
 };
 
 Route::get('/', function () {
