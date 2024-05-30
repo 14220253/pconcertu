@@ -44,7 +44,16 @@ Route::get('/transactionHistory', function () {
 Route::get('/comment', function () {
     return view('comment');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+Route::get('/eventlisting', function (){
+    return view('eventlisting');
+});
 Route::resource('event', EventController::class);
 Route::resource('ads', AdsController::class);
 Route::resource('guest', GuestController::class);
