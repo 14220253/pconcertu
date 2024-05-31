@@ -135,11 +135,32 @@
                 <h1 class="text-3xl font-bold tracking-tight text-gray-900">Event</h1>
             </div>
         </header>
-        <main>
+        <main class="bg-white shadow">
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 flex flex-wrap">
                 <!-- Your content -->
                 <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img class="w-full" src=".\public\picture1.png" alt="Olivia Rodrigo">
+                    <img class="w-full"
+                        src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
+                        alt="Olivia Rodrigo">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Olivia Rodrigo : The Sour Tour</div>
+                        <p class="text-gray-700 text-base">
+                            27- 29 February 2024
+                        </p>
+                    </div>
+                    <div class="px-6 pt-4 pb-2">
+                        <span
+                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#concert</span>
+                        <span
+                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#OliviaRodrigo</span>
+                        <span
+                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#music</span>
+                    </div>
+                </div>
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                    <img class="w-full"
+                        src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
+                        alt="Olivia Rodrigo">
                     <div class="px-6 py-4">
                         <div class="font-bold text-xl mb-2">Olivia Rodrigo</div>
                         <p class="text-gray-700 text-base">
@@ -157,7 +178,9 @@
                     </div>
                 </div>
                 <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img class="w-full" src=".\public\picture1.png" alt="Olivia Rodrigo">
+                    <img class="w-full"
+                        src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
+                        alt="Olivia Rodrigo">
                     <div class="px-6 py-4">
                         <div class="font-bold text-xl mb-2">Olivia Rodrigo</div>
                         <p class="text-gray-700 text-base">
@@ -175,25 +198,9 @@
                     </div>
                 </div>
                 <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img class="w-full" src=".\public\picture1.png" alt="Olivia Rodrigo">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">Olivia Rodrigo</div>
-                        <p class="text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores
-                            et perferendis eaque, exercitationem praesentium nihil.
-                        </p>
-                    </div>
-                    <div class="px-6 pt-4 pb-2">
-                        <span
-                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#concert</span>
-                        <span
-                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#OliviaRodrigo</span>
-                        <span
-                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#music</span>
-                    </div>
-                </div>
-                <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img class="w-full" src=".\public\picture1.png" alt="Olivia Rodrigo">
+                    <img class="w-full"
+                        src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
+                        alt="Olivia Rodrigo">
                     <div class="px-6 py-4">
                         <div class="font-bold text-xl mb-2">Olivia Rodrigo</div>
                         <p class="text-gray-700 text-base">

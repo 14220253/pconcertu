@@ -54,6 +54,9 @@ Route::get('/welcome', function () {
 Route::get('/eventlisting', function (){
     return view('eventlisting');
 });
+Route::get('/event-detail', function (){
+    return view('event-detail');
+});
 Route::resource('event', EventController::class);
 Route::resource('ads', AdsController::class);
 Route::resource('guest', GuestController::class);
