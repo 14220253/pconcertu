@@ -15,7 +15,7 @@ class PromotionSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             DB::table('promotions')->insert([
                 'tandc' => Str::random(100),
                 'amount' => rand(1, 10),
