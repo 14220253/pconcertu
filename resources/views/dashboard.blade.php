@@ -8,6 +8,7 @@
 
     @vite('resources\css\app.css');
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
     <title>Document</title>
 </head>
@@ -138,7 +139,7 @@
         <main class="bg-white shadow">
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 flex flex-wrap">
                 <!-- Your content -->
-                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <div class="max-w-sm mx-2 my-2 rounded overflow-hidden shadow-lg">
                     <img class="w-full"
                         src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
                         alt="Olivia Rodrigo">
@@ -157,7 +158,7 @@
                             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#music</span>
                     </div>
                 </div>
-                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <div class="max-w-sm mx-2 my-2 rounded overflow-hidden shadow-lg">
                     <img class="w-full"
                         src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
                         alt="Olivia Rodrigo">
@@ -177,7 +178,7 @@
                             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#music</span>
                     </div>
                 </div>
-                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <div class="max-w-sm mx-2 my-2 rounded overflow-hidden shadow-lg">
                     <img class="w-full"
                         src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
                         alt="Olivia Rodrigo">
@@ -197,7 +198,7 @@
                             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#music</span>
                     </div>
                 </div>
-                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <div class="max-w-sm mx-2 my-2 rounded overflow-hidden shadow-lg">
                     <img class="w-full"
                         src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
                         alt="Olivia Rodrigo">
