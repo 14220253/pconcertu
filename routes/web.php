@@ -57,6 +57,9 @@ Route::get('/eventlisting', function (){
 Route::get('/event-detail', function (){
     return view('event-detail');
 });
+Route::get('/checkout', function (){
+    return view('checkout');
+});
 Route::resource('event', EventController::class);
 Route::resource('ads', AdsController::class);
 Route::resource('guest', GuestController::class);

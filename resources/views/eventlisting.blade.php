@@ -8,6 +8,8 @@
     @vite('resources/css/app.css');
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
 
 
     <title>Document</title>

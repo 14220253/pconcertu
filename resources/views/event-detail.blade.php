@@ -8,6 +8,8 @@
     @vite('resources/css/app.css');
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
 </head>
 
 <x-nav></x-nav>
@@ -84,8 +86,8 @@
                         <div class="flex items-center">
                             <div class="flex items-center">
                                 <!-- Active: "text-gray-900", Default: "text-gray-200" -->
-                                <svg :class="" class="text-gray-900 h-5 w-5 flex-shrink-0"
-                                    viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <svg class="text-gray-900 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true">
                                     <path fill-rule="evenodd"
                                         d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
                                         clip-rule="evenodd" />
@@ -127,15 +129,17 @@
                             <h3 class="text-sm font-medium text-gray-900">Color</h3>
 
                             <fieldset aria-label="Choose a color" class="mt-4">
-                                <div class="flex items-center space-x-3">
+                                <div class="flex items-center space-x-3" x-data="{ isChecked: null }">
                                     <!--
                     Active and Checked: "ring ring-offset-1"
                     Not Active and Checked: "ring-2"
                   -->
                                     <label aria-label="White"
                                         class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400">
-                                        <input type="radio" name="color-choice" value="White" class="sr-only">
+                                        <input @click="isChecked = event.target.value" type="radio"
+                                            name="color-choice" value="White" class="sr-only">
                                         <span aria-hidden="true"
+                                            :class="isChecked == 'White' ? 'ring ring-offset-1' : ''"
                                             class="h-8 w-8 bg-white rounded-full border border-black border-opacity-10"></span>
                                     </label>
                                     <!--
@@ -144,8 +148,10 @@
                   -->
                                     <label aria-label="Gray"
                                         class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400">
-                                        <input type="radio" name="color-choice" value="Gray" class="sr-only">
+                                        <input @click="isChecked = event.target.value" type="radio"
+                                            name="color-choice" value="Gray" class="sr-only">
                                         <span aria-hidden="true"
+                                            :class="isChecked == 'Gray' ? 'ring ring-offset-1' : ''"
                                             class="h-8 w-8 bg-gray-200 rounded-full border border-black border-opacity-10"></span>
                                     </label>
                                     <!--
@@ -154,8 +160,10 @@
                   -->
                                     <label aria-label="Black"
                                         class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-900">
-                                        <input type="radio" name="color-choice" value="Black" class="sr-only">
+                                        <input @click="isChecked = event.target.value" type="radio"
+                                            name="color-choice" value="Black" class="sr-only">
                                         <span aria-hidden="true"
+                                            :class="isChecked == 'Black' ? 'ring ring-offset-1' : ''"
                                             class="h-8 w-8 bg-gray-900 rounded-full border border-black border-opacity-10"></span>
                                     </label>
                                 </div>
@@ -170,15 +178,16 @@
                                     class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
                             </div>
 
-                            <fieldset aria-label="Choose a size" class="mt-4">
+                            <fieldset aria-label="Choose a size" class="mt-4" x-data="{ isSize: null, isActive: false }">
                                 <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
                                     <!-- Active: "ring-2 ring-indigo-500" -->
                                     <label
                                         class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-not-allowed bg-gray-50 text-gray-200">
-                                        <input type="radio" name="size-choice" value="XXS" disabled
-                                            class="sr-only">
+                                        <input @click="isSize = event.target.value" type="radio" name="size-choice"
+                                            value="XXS" disabled class="sr-only">
                                         <span>XXS</span>
                                         <span aria-hidden="true"
+                                            :class="isSize == 'XXS' ? 'ring-2 ring-indigo-500' : ''"
                                             class="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200">
                                             <svg class="absolute inset-0 h-full w-full stroke-2 text-gray-200"
                                                 viewBox="0 0 100 100" preserveAspectRatio="none"
@@ -189,9 +198,10 @@
                                         </span>
                                     </label>
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label
+                                    <label :class="isSize == 'XS' ? 'ring-2 ring-indigo-500' : ''"
                                         class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
-                                        <input type="radio" name="size-choice" value="XS" class="sr-only">
+                                        <input @click="isSize = event.target.value" type="radio" name="size-choice"
+                                            value="XS" class="sr-only">
                                         <span>XS</span>
                                         <!--
                       Active: "border", Not Active: "border-2"
@@ -201,9 +211,10 @@
                                             aria-hidden="true"></span>
                                     </label>
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label
+                                    <label :class="isSize == 'S' ? 'ring-2 ring-indigo-500' : ''"
                                         class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
-                                        <input type="radio" name="size-choice" value="S" class="sr-only">
+                                        <input @click="isSize = event.target.value" type="radio" name="size-choice"
+                                            value="S" class="sr-only">
                                         <span>S</span>
                                         <!--
                       Active: "border", Not Active: "border-2"
@@ -213,9 +224,10 @@
                                             aria-hidden="true"></span>
                                     </label>
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label
+                                    <label :class="isSize == 'M' ? 'ring-2 ring-indigo-500' : ''"
                                         class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
-                                        <input type="radio" name="size-choice" value="M" class="sr-only">
+                                        <input @click="isSize = event.target.value" type="radio" name="size-choice"
+                                            value="M" class="sr-only">
                                         <span>M</span>
                                         <!--
                       Active: "border", Not Active: "border-2"
@@ -225,9 +237,10 @@
                                             aria-hidden="true"></span>
                                     </label>
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label
+                                    <label :class="isSize == 'L' ? 'ring-2 ring-indigo-500' : ''"
                                         class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
-                                        <input type="radio" name="size-choice" value="L" class="sr-only">
+                                        <input @click="isSize = event.target.value" type="radio" name="size-choice"
+                                            value="L" class="sr-only">
                                         <span>L</span>
                                         <!--
                       Active: "border", Not Active: "border-2"
@@ -237,9 +250,10 @@
                                             aria-hidden="true"></span>
                                     </label>
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label
+                                    <label :class="isSize == 'XL' ? 'ring-2 ring-indigo-500' : ''"
                                         class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
-                                        <input type="radio" name="size-choice" value="XL" class="sr-only">
+                                        <input @click="isSize = event.target.value" type="radio" name="size-choice"
+                                            value="XL" class="sr-only">
                                         <span>XL</span>
                                         <!--
                       Active: "border", Not Active: "border-2"
@@ -249,9 +263,10 @@
                                             aria-hidden="true"></span>
                                     </label>
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label
+                                    <label :class="isSize == '2XL' ? 'ring-2 ring-indigo-500' : ''"
                                         class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
-                                        <input type="radio" name="size-choice" value="2XL" class="sr-only">
+                                        <input @click="isSize = event.target.value" type="radio" name="size-choice"
+                                            value="2XL" class="sr-only">
                                         <span>2XL</span>
                                         <!--
                       Active: "border", Not Active: "border-2"
@@ -261,9 +276,10 @@
                                             aria-hidden="true"></span>
                                     </label>
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label
+                                    <label :class="isSize == '3XL' ? 'ring-2 ring-indigo-500' : ''"
                                         class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
-                                        <input type="radio" name="size-choice" value="3XL" class="sr-only">
+                                        <input @click="isSize = event.target.value" type="radio" name="size-choice"
+                                            value="3XL" class="sr-only">
                                         <span>3XL</span>
                                         <!--
                       Active: "border", Not Active: "border-2"
