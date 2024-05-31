@@ -36,8 +36,8 @@
                         </button>
                     </div>
                     <div class="hidden lg:flex lg:gap-x-12">
-                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
-                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">About Us</a>
+                        <a href="/eventlisting" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+                        <a href="#about-us" class="text-sm font-semibold leading-6 text-gray-900">About Us</a>
                         {{-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900"></a>
                         <a href="#" class="text-sm font-semibold leading-6 text-gray-900"></a> --}}
                     </div>
@@ -114,10 +114,10 @@
                             concert pretty easy. With tons of recommendation for events locally or even across the
                             country.</p>
                         <div class="mt-10 flex items-center justify-center gap-x-6">
-                            <a href="#"
+                            <a href="/eventlisting"
                                 class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
                                 started</a>
-                            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span
+                            <a href="#about-us" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span
                                     aria-hidden="true">→</span></a>
                         </div>
                     </div>
@@ -237,7 +237,7 @@
         </div>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl lg:mx-0">
-                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">About Us</h2>
+                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl" id="about-us">About Us</h2>
                 <p class="mt-6 text-lg leading-8 text-gray-300">Inspired by other event ticketing app. We want our
                     customers to feel the luxurious yet powerful experienced when using our websites. With over 150
                     partnerships, and doing more than 1000+ transactions happens in a day. We support reliable

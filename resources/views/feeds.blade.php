@@ -27,14 +27,14 @@
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                                 aria-current="page">Home</a>
-                            <a href="feeds"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Feeds</a>
-                            <a href="transactionHistory"
+                            <a href="eventlisting"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Events</a>
+                            <!-- <a href="transactionHistory"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Transaction
                                 History</a>
                             <a href="profile"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">My
-                                Profile</a>
+                                Profile</a> -->
                             
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                                 <!-- Active: "bg-gray-100", Not Active: "" -->
                                 <a href="profile" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
                                     tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                <a href="notification" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
                                     tabindex="-1" id="user-menu-item-1">Settings</a>
                                 <a href="/welcome" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
                                     tabindex="-1" id="user-menu-item-2">Sign out</a>
@@ -119,14 +119,14 @@
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
                     aria-current="page">Home</a>
-                <a href="feeds"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Feeds</a>
-                <a href="transactionHistory"
+                <a href="eventlisting"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Events</a>
+                <!-- <a href="transactionHistory"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">My
                     Transaction</a>
                 <a href="#"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">My
-                    Profile</a>
+                    Profile</a> -->
                 
             </div>
             <div class="border-t border-gray-700 pb-3 pt-4">
