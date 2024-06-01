@@ -60,11 +60,14 @@ Route::get('/checkout', function (){
 Route::get('/ticket', function (){
     return view('ticket_type.index');
 });
+Route::get('/notification', function (){
+    return view('notification');
+});
 Route::get('/event', [EventController::class, 'index'])->name('event.index');
 Route::get('/event/{event}', [EventController::class,'show'])->name('event.show');
 Route::get('/merch', [MerchController::class, 'index'])->name('merch.index');
 Route::get('/merch/{merch}', [MerchController::class,'show'])->name('merch.show');
-Route::get('/transactionHistory', [TransactionHistoryController::class, 'index'])->name('transaction_history.index');
+Route::get('/transaction_history/{customer}', [TransactionHistoryController::class, 'index'])->name('transaction_history.index');
 
 Route::resource('event', EventController::class);
 Route::resource('ads', AdsController::class);

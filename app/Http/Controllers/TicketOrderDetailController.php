@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TicketOrderDetail;
+use Illuminate\Database\Query\JoinClause;
 use App\Http\Requests\StoreTicketOrderDetailRequest;
 use App\Http\Requests\UpdateTicketOrderDetailRequest;
 
@@ -13,6 +14,15 @@ class TicketOrderDetailController extends Controller
      */
     public function index()
     {
+        $data = TicketOrderDetail::query()
+            ->join('customers', 'customers.id', '=', 'ticket_order_details.customer_id')
+            ->join('tickets', 'tickets.id', '=', 'ticket_order_details.ticket_id')
+            ->join('events', 'events.id', '=', 'tickets.event_id')
+            ->select('customers.name as customer_name', 'ticket_order_details.seat_id', 'tickets.price', 'events.name as event_name', 'ticket_order_details.ticket_id')
+            ->get();
+            dd($data);
+
+        return view('transaction_history.index', ['data' => $data]);
     }
 
     /**

@@ -13,11 +13,19 @@ class TransactionHistoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($customer_id)
     {
-        $tickets = TicketOrderDetail::query()->orderBy('customer_id')->paginate(2);
-        // dd($tickets);
-        return view('transaction_history.index', ['transactionHistory' => $tickets]);
+        $data = TicketOrderDetail::query()
+            ->join('customers', 'customers.id', '=', 'ticket_order_details.customer_id')
+            ->join('tickets', 'tickets.id', '=', 'ticket_order_details.ticket_id')
+            ->join('events', 'events.id', '=', 'tickets.event_id')
+            ->join('ticket_types', 'ticket_order_details.ticket_type_id','=','ticket_types.id')
+            ->join('master_events', 'master_events.id','=','events.event_master_id')
+            ->select('customers.name as customer_name', 'ticket_order_details.seat_id', 'tickets.price as price', 'master_events.name as event_name', 'ticket_order_details.ticket_id', 'ticket_types.name as name')
+            ->where('ticket_order_details.customer_id', $customer_id)
+            ->get();
+
+        return view('transaction_history.index', ['data' => $data]);
     }
 
     /**
