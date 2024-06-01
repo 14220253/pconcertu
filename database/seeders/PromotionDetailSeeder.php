@@ -15,13 +15,14 @@ class PromotionDetailSeeder extends Seeder
      */
     public function run(): void
     {
-        $ticket = DB::table('tickets')->pluck('id')->toArray();
-        $promotion = DB::table('promotions')->pluck('id')->toArray();
+        $ticket = DB::table('tickets')->pluck('id');
+        $promotion = DB::table('promotions')->pluck('id');
+        $faker = \Faker\Factory::create();
 
         for ($i = 0; $i < 100; $i++) {
             DB::table('promotion_details')->insert([
-                'ticket_id' => $ticket[0],
-                'promotion_id' => $promotion[0],
+                'ticket_id' => $faker->randomElement($ticket),
+                'promotion_id' => $faker->randomElement($promotion),
             ]);
         }
     }

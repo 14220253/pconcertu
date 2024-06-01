@@ -15,9 +15,11 @@ class PaymentMethodSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = \Faker\Factory::create();
+
         for ($i = 0; $i < 10; $i++) {
             DB::table('payment_methods')->insert([
-                'payment_method_name' => Str::random(10),
+                'payment_method_name' => $faker->company,
             ]);
         }
     }

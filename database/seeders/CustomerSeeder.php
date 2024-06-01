@@ -15,13 +15,15 @@ class CustomerSeeder extends Seeder
      */
     public function run(): void
     {
+    $faker = \Faker\Factory::create();
+
         for ($i = 0; $i < 100; $i++) {
             $nik = $this->generateNIK();
 
             DB::table('customers')->insert([
-                'name' => Str::random(10),
-                'email' => Str::random(10) . '@example.com',
-                'password' => Hash::make(Str::random(10)), 
+                'name' => $faker->name,
+                'email' => $faker->unique()->safeEmail,
+                'password' => bcrypt($faker->password),
                 'phone_number' => '08' . str_pad(mt_rand(0, 9999999999), 10, '0', STR_PAD_LEFT),
                 'NIK' => $nik,
             ]);

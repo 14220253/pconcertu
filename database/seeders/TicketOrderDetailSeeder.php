@@ -15,17 +15,19 @@ class TicketOrderDetailSeeder extends Seeder
      */
     public function run(): void
     {
-        $customer = DB::table('customers')->pluck('id')->toArray();
-        $ticket = DB::table('tickets')->pluck('id')->toArray();
-        $type = DB::table('ticket_types')->pluck('id')->toArray();
-        $seat = DB::table('seats')->pluck('id')->toArray();
+        $customer = DB::table('customers')->pluck('id');
+        $ticket = DB::table('tickets')->pluck('id');
+        $type = DB::table('ticket_types')->pluck('id');
+        $seat = DB::table('seats')->pluck('id');
+        $faker = \Faker\Factory::create();
+
 
         for ($i = 0; $i < 100; $i++) {
             DB::table('ticket_order_details')->insert([
-                'customer_id' => $customer[0],
-                'ticket_id' => $ticket[0],
-                'ticket_type_id' => $type[0], 
-                'seat_id' => $seat[0],
+                'customer_id' => $faker->randomElement($customer),
+                'ticket_id' => $faker->randomElement($ticket),
+                'ticket_type_id' => $faker->randomElement($type),
+                'seat_id' => $faker->randomElement($seat),
             ]);
         }
     }

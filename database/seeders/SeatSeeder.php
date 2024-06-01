@@ -16,12 +16,14 @@ class SeatSeeder extends Seeder
     public function run(): void
     {
         $type = DB::table('ticket_types')->pluck('id')->toArray();
+        $faker = \Faker\Factory::create();
+
 
         for ($i = 0; $i < 100; $i++) {
 
             DB::table('seats')->insert([
-                'status' => Str::random(10),
-                'ticket_type_id' => $type[0],
+                'status' => $faker->boolean,
+                'ticket_type_id' => $faker->randomElement($type),
             ]);
         }
     }

@@ -15,9 +15,11 @@ class MasterEventSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = \Faker\Factory::create();
+
         for ($i = 0; $i < 100; $i++) {
             DB::table('master_events')->insert([
-                'name' => Str::random(10),
+                'name' => $faker->name,
             ]);
         }
     }

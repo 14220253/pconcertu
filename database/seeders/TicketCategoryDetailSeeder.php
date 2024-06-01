@@ -17,11 +17,12 @@ class TicketCategoryDetailSeeder extends Seeder
     {
         $category = DB::table('ticket_categories')->pluck('id')->toArray();
         $ticket = DB::table('tickets')->pluck('id')->toArray();
+        $faker = \Faker\Factory::create();
 
         for ($i = 0; $i < 100; $i++) {
             DB::table('ticket_category_details')->insert([
-                'ticket_category_id' => $category[0],
-                'ticket_id' => $ticket[0],
+                'ticket_category_id' => $faker->randomElement($category),
+                'ticket_id' => $faker->randomElement($ticket),
             ]);
         }
     }

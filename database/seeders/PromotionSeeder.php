@@ -15,12 +15,13 @@ class PromotionSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = \Faker\Factory::create();
         for ($i = 0; $i < 100; $i++) {
             DB::table('promotions')->insert([
-                'tandc' => Str::random(100),
-                'amount' => rand(1, 10),
-                'code' => Str::random(3), 
-                'periods' => rand(0, 50),
+                'tandc' => $faker->realText(200),
+                'amount' => $faker->numberBetween(5,60),
+                'code' => $faker->word,
+                'periods' => $faker->date('Y-m-d'),
             ]);
         }
     }

@@ -16,9 +16,10 @@ class GuestDetailSeeder extends Seeder
      */
     public function run(): void
     {
+    $faker = \Faker\Factory::create();
         for ($i = 0; $i < 100; $i++) {
             DB::table('guest_details')->insert([
-                'role' => Str::random(10),
+                'role' => $faker->word,
             ]);
         }
     }

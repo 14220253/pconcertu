@@ -15,16 +15,17 @@ class TicketSeeder extends Seeder
      */
     public function run(): void
     {
-        $event = DB::table('events')->pluck('id')->toArray();
-        $paymentMethod = DB::table('payment_methods')->pluck('id')->toArray();
+        $event = DB::table('events')->pluck('id');
+        $paymentMethod = DB::table('payment_methods')->pluck('id');
+        $faker = \Faker\Factory::create();
 
         for ($i = 0; $i < 100; $i++) {
             DB::table('tickets')->insert([
-                'price' => rand(100000, 3000000),
-                'rating' => rand(0, 5),
-                'review' => Str::random(100), 
-                'event_id' => $event[0],
-                'payment_method_id' => $paymentMethod[0],
+                'price' => $faker->numberBetween(100000,5000000),
+                'rating' => $faker->numberBetween(0,5),
+                'review' => $faker->realText(200),
+                'event_id' => $faker->randomElement($event),
+                'payment_method_id' => $faker->randomElement($paymentMethod),
             ]);
         }
     }
