@@ -7,8 +7,8 @@
 </head>
 <body>
     <H1>PORTAL</H1>
-    <a href="/index">Index</a>
-    <a href="/merchs">Merch</a>
+    <a href="/event">Event</a>
+    <a href="/merch">Merch</a>
     <a href="/transactionHistory">Transaction History</a>
     <a href="/comment">Comment</a>
 </body>
