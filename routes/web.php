@@ -64,6 +64,9 @@ Route::get('/event-detail', function (){
 Route::get('/checkout', function (){
     return view('checkout');
 });
+Route::get('/event', [EventController::class, 'index'])->name('event.index');
+Route::get('/event/{id}', [EventController::class,'show'])->name('event.show');
+
 Route::resource('event', EventController::class);
 Route::resource('ads', AdsController::class);
 Route::resource('guest', GuestController::class);

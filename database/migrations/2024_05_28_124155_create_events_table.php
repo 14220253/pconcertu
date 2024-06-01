@@ -18,8 +18,6 @@ return new class extends Migration
             $table->binary('denah');
             $table->foreignId('event_master_id')->constrained('master_events');
             $table->foreignId('event_organizer_id')->constrained('event_organizers');
-
-
             $table->id();
             $table->timestamps();
         });

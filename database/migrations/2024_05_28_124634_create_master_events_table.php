@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('master_events', function (Blueprint $table) {
             $table->string('name');
-
             $table->id();
             $table->timestamps();
         });
