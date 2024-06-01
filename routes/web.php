@@ -24,6 +24,7 @@ use App\Http\Controllers\{
     MasterEventController,
     AdsDetailController
 };
+use GuzzleHttp\Promise\Create;
 
 Route::get('/', function () {
     return view('portal');
@@ -46,6 +47,9 @@ Route::get('/comment', function () {
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
+});
+Route::get('/register', function () {
+    return view('register');
 });
 
 Route::get('/welcome', function () {

@@ -8,8 +8,6 @@
     @vite('resources/css/app.css')
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-
 
 
     <title>Document</title>
@@ -29,14 +27,14 @@
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             <a href="dashboard" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                                 aria-current="page">Home</a>
-                            <a href="feeds"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Feeds</a>
-                            <a href="transactionHistory"
+                            <a href="eventlisting"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Events</a>
+                            <!-- <a href="transactionHistory"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Transaction
                                 History</a>
                             <a href="profile"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">My
-                                Profile</a>
+                                Profile</a> -->
                             
                         </div>
                     </div>
@@ -84,7 +82,7 @@
                                 <!-- Active: "bg-gray-100", Not Active: "" -->
                                 <a href="profile" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
                                     tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                <a href="notification" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
                                     tabindex="-1" id="user-menu-item-1">Settings</a>
                                 <a href="/welcome" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
                                     tabindex="-1" id="user-menu-item-2">Sign out</a>
@@ -121,14 +119,14 @@
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a href="dashboard" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
                     aria-current="page">Home</a>
-                <a href="feeds"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Feeds</a>
-                <a href="transactionHistory"
+                <a href="eventlisting"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Events</a>
+                <!-- <a href="transactionHistory"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">My
                     Transaction</a>
                 <a href="#"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">My
-                    Profile</a>
+                    Profile</a> -->
                 
             </div>
             <div class="border-t border-gray-700 pb-3 pt-4">
@@ -228,33 +226,33 @@
             </button>
         </div>
 
-        {{-- <p class="mt-5">This carousel slider component is part of a larger, open-source library of Tailwind CSS
+        <p class="mt-5">This carousel slider component is part of a larger, open-source library of Tailwind CSS
             components. Learn
             more
             by going to the official <a class="text-blue-600 hover:underline"
                 href="https://flowbite.com/docs/getting-started/introduction/" target="_blank">Flowbite
                 Documentation</a>.
-        </p> --}}
+        </p>
     </div>
     <div class="bg-white">
         <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 py-3 my-3">Events</h2>
+            <h2 class="sr-only">Products</h2>
 
             <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                 <a href="#" class="group">
                     <div
                         class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                        <img src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
+                        <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
                             alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
                             class="h-full w-full object-cover object-center group-hover:opacity-75">
                     </div>
-                    <h3 class="mt-4 text-sm text-gray-700">26- 27 February 2024</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900">Olivia Rodrigo: The Sour Tour</p>
+                    <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
+                    <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
                 </a>
                 <a href="#" class="group">
                     <div
                         class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                        <img src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
+                        <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
                             alt="Olive drab green insulated bottle with flared screw lid and flat top."
                             class="h-full w-full object-cover object-center group-hover:opacity-75">
                     </div>
@@ -264,7 +262,7 @@
                 <a href="#" class="group">
                     <div
                         class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                        <img src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
+                        <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
                             alt="Person using a pen to cross a task off a productivity paper card."
                             class="h-full w-full object-cover object-center group-hover:opacity-75">
                     </div>
@@ -274,7 +272,7 @@
                 <a href="#" class="group">
                     <div
                         class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                        <img src="https://th.bing.com/th/id/OIP.Vy5Zx-FaCSoqJm_7OAoZEgAAAA?rs=1&pid=ImgDetMain"
+                        <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg"
                             alt="Hand holding black machined steel mechanical pencil with brass tip and top."
                             class="h-full w-full object-cover object-center group-hover:opacity-75">
                     </div>
