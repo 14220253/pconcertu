@@ -3,16 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\TicketOrderDetail;
+use App\Models\Event;
+use App\Models\Ticket;
 use App\Http\Requests\StoreTicketOrderDetailRequest;
 use App\Http\Requests\UpdateTicketOrderDetailRequest;
 
-class TicketOrderDetailController extends Controller
+class TransactionHistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $tickets = TicketOrderDetail::query()->orderBy('customer_id')->paginate(2);
+        // dd($tickets);
+        return view('transaction_history.index', ['transactionHistory' => $tickets]);
     }
 
     /**

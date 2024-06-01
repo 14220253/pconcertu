@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class TicketOrderDetail extends Model
 {
     use HasFactory;
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class, 'event_id');
+    }
+    public function paymentMethod()
+    {
+        return $this->belongsTo(PaymentMethod::class, 'payment_method_id');
+    }
+    public function ticketType()
+    {
+        return $this->belongsTo(TicketType::class, 'ticket_type_id');
+    }
 }

@@ -12,4 +12,8 @@ class Event extends Model
     {
         return $this->belongsTo(MasterEvent::class, 'event_master_id');
     }
+    public function ticket()
+    {
+        return $this->hasMany(Ticket::class, 'event_id');
+    }
 }

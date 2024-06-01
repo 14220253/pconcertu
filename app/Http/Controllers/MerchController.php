@@ -13,7 +13,10 @@ class MerchController extends Controller
      */
     public function index()
     {
-        //
+        
+        $merch = Merch::query()->orderBy('id')->paginate(10);
+        // dd($events);
+        return view('merch.index', ['merches' => $merch]);
     }
 
     /**
@@ -37,7 +40,7 @@ class MerchController extends Controller
      */
     public function show(Merch $merch)
     {
-        //
+        return view('merch.show', ['merch'=>$merch]);
     }
 
     /**
