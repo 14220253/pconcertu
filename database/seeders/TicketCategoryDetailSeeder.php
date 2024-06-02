@@ -23,6 +23,8 @@ class TicketCategoryDetailSeeder extends Seeder
             DB::table('ticket_category_details')->insert([
                 'ticket_category_id' => $faker->randomElement($category),
                 'ticket_id' => $faker->randomElement($ticket),
+                'created_at' =>'now',
+                'updated_at' =>'now'
             ]);
         }
     }

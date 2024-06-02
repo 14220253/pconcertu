@@ -24,6 +24,8 @@ class SeatSeeder extends Seeder
             DB::table('seats')->insert([
                 'status' => $faker->boolean,
                 'ticket_type_id' => $faker->randomElement($type),
+                'created_at' =>'now',
+                'updated_at' =>'now'
             ]);
         }
     }

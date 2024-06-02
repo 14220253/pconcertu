@@ -18,6 +18,8 @@ class MerchOrderSeeder extends Seeder
         for ($i = 0; $i < 100; $i++) {
             DB::table('merch_orders')->insert([
                 'id' => $i,
+                'created_at' =>'now',
+                'updated_at' =>'now'
             ]);
         }
     }

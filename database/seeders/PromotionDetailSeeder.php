@@ -23,6 +23,8 @@ class PromotionDetailSeeder extends Seeder
             DB::table('promotion_details')->insert([
                 'ticket_id' => $faker->randomElement($ticket),
                 'promotion_id' => $faker->randomElement($promotion),
+                'created_at' =>'now',
+                'updated_at' =>'now'
             ]);
         }
     }

@@ -26,6 +26,8 @@ class TicketSeeder extends Seeder
                 'review' => $faker->realText(200),
                 'event_id' => $faker->randomElement($event),
                 'payment_method_id' => $faker->randomElement($paymentMethod),
+                'created_at' =>'now',
+                'updated_at' =>'now'
             ]);
         }
     }

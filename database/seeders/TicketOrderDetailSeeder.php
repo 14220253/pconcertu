@@ -28,6 +28,8 @@ class TicketOrderDetailSeeder extends Seeder
                 'ticket_id' => $faker->randomElement($ticket),
                 'ticket_type_id' => $faker->randomElement($type),
                 'seat_id' => $faker->randomElement($seat),
+                'created_at' =>'now',
+                'updated_at' =>'now'
             ]);
         }
     }

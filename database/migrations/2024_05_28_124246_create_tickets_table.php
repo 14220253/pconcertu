@@ -17,7 +17,6 @@ return new class extends Migration
             $table->longText('review');
             $table->foreignId('event_id')->constrained('events');
             $table->foreignId('payment_method_id')->constrained('payment_methods');
-
             $table->id();
             $table->timestamps();
         });

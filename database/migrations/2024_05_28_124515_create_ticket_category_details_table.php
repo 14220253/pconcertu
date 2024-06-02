@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('ticket_category_details', function (Blueprint $table) {
             $table->foreignId('ticket_category_id')->constrained('ticket_categories')->onDelete('cascade');
             $table->foreignId('ticket_id')->constrained('tickets')->onDelete('cascade');
-
             $table->id();
             $table->timestamps();
         });

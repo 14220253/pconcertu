@@ -15,11 +15,17 @@ class TicketTypeSeeder extends Seeder
      */
     public function run(): void
     {
-            DB::table('ticket_types')->insert(['name' => 'bronze',]);
-            DB::table('ticket_types')->insert(['name' => 'silver',]);
-            DB::table('ticket_types')->insert(['name' => 'gold',]);
-            DB::table('ticket_types')->insert(['name' => 'platinum',]);
-            DB::table('ticket_types')->insert(['name' => 'diamond',]);
-            DB::table('ticket_types')->insert(['name' => 'tribune',]);
+            DB::table('ticket_types')->insert(['name' => 'bronze','created_at' =>'now',
+            'updated_at' =>'now']);
+            DB::table('ticket_types')->insert(['name' => 'silver','created_at' =>'now',
+            'updated_at' =>'now']);
+            DB::table('ticket_types')->insert(['name' => 'gold','created_at' =>'now',
+            'updated_at' =>'now']);
+            DB::table('ticket_types')->insert(['name' => 'platinum','created_at' =>'now',
+            'updated_at' =>'now']);
+            DB::table('ticket_types')->insert(['name' => 'diamond','created_at' =>'now',
+            'updated_at' =>'now']);
+            DB::table('ticket_types')->insert(['name' => 'tribune','created_at' =>'now',
+            'updated_at' =>'now']);
     }
 }

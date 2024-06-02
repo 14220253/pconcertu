@@ -15,7 +15,6 @@ return new class extends Migration
             $table->longText('guest_name');
             $table->longText('guest_email');
             $table->longText('guest_number');
-
             $table->id();
             $table->timestamps();
         });

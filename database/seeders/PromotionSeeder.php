@@ -22,6 +22,8 @@ class PromotionSeeder extends Seeder
                 'amount' => $faker->numberBetween(5,60),
                 'code' => $faker->word,
                 'periods' => $faker->date('Y-m-d'),
+                'created_at' =>'now',
+                'updated_at' =>'now'
             ]);
         }
     }

@@ -15,8 +15,12 @@ class TicketCategorySeeder extends Seeder
      */
     public function run(): void
     {
-            DB::table('ticket_categories')->insert(['ticket_category_name' => 'presale',]);
-            DB::table('ticket_categories')->insert(['ticket_category_name' => 'early bird',]);
-            DB::table('ticket_categories')->insert(['ticket_category_name' => 'regular',]);
+            DB::table('ticket_categories')->insert(['ticket_category_name' => 'presale','created_at' =>'now',
+            'updated_at' =>'now']);
+            DB::table('ticket_categories')->insert(['ticket_category_name' => 'early bird','created_at' =>'now',
+            'updated_at' =>'now']);
+            DB::table('ticket_categories')->insert(['ticket_category_name' => 'regular','created_at' =>'now',
+            'updated_at' =>'now']);
+
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class EventSeeder extends Seeder
 {
@@ -27,9 +28,15 @@ class EventSeeder extends Seeder
                 'periods' => $faker->date('Y-m-d', 'now'),
                 'location' => $faker->address,
                 'isGoPlus' => $faker->boolean,
-                'denah' => $faker->imageUrl(640,480,'abstract',true,null,false,'jpg'),
+                'denah' => $faker->imageUrl(640,480,'city',true,null,false,'jpg'),
+                'poster' => $faker->imageUrl(640,480,'nightlife',true,null,false,'jpg'),
                 'event_master_id' => $faker->randomElement($master),
                 'event_organizer_id' => $faker->randomElement($organizer),
+                'date'=> $faker->date('Y-m-d'),
+                'dress_code' => $faker->colorName,
+                'time'=> $faker->time(),
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

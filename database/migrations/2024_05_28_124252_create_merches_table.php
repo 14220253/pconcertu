@@ -17,6 +17,7 @@ return new class extends Migration
             $table -> json('variation');
             $table->integer('stock');
             $table->longText('description');
+            $table->binary('product_picture');
             $table->foreignId('event_id')->constrained('events');
 
             $table->id();

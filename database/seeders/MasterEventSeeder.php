@@ -20,6 +20,8 @@ class MasterEventSeeder extends Seeder
         for ($i = 0; $i < 100; $i++) {
             DB::table('master_events')->insert([
                 'name' => $faker->name,
+                'created_at' =>'now',
+                'updated_at' =>'now'
             ]);
         }
     }

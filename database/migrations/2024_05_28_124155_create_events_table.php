@@ -16,8 +16,12 @@ return new class extends Migration
             $table->longText('location');
             $table->boolean('isGoPlus');
             $table->binary('denah');
+            $table->binary('poster');
             $table->foreignId('event_master_id')->constrained('master_events');
             $table->foreignId('event_organizer_id')->constrained('event_organizers');
+            $table->date('date');
+            $table->longText('dress_code');
+            $table->time('time');
             $table->id();
             $table->timestamps();
         });

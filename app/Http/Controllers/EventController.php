@@ -39,7 +39,46 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        return view('event.show', ['event'=>$event]);
+        $data = Event::query()
+            ->join('reviews', 'reviews.event_id', '=', 'events.id') //mengambil review
+            ->join('event_organizers', 'event_organizers.id', '=', 'events.event_organizer_id') //mengambil eo
+            ->join('guest_details', 'guest_details.event_id','=','events.id') //mengambil guest detail
+            ->join('guests', 'guests.id','=','guest_details.guest_id') //menagmbil nama guest
+            ->join('master_events', 'master_events.id','=','events.event_master_id') //mengambil nama event
+            ->join('tickets','tickets.event_id','=','events.id')
+            ->join('ticket_category_details', 'ticket_category_details.ticket_id','=','tickets.id') //mengambil tipe tiket
+            ->join('ticket_categories', 'ticket_category_details.ticket_category_id','=','ticket_categories.id')
+            ->select(
+                'reviews.*',
+                'master_events.name as event_name',
+                'tickets.price as price',
+                'events.location as location',
+                'events.date as date',
+                'events.dress_code as dress_code',
+                'events.time as times' ,
+                'guests.guest_name as guest_name',
+                'event_organizers.name as eo_name',
+                'ticket_categories.ticket_category_name',
+                'events.id as event_id'
+                )
+            ->where('events.id', $event->id)
+            ->first();
+        $grouppedData = Event::query()
+            ->select('tickets.price as price', 'ticket_categories.ticket_category_name')
+            ->join('reviews', 'reviews.event_id', '=', 'events.id')
+            ->join('event_organizers', 'event_organizers.id', '=', 'events.event_organizer_id')
+            ->join('guest_details', 'guest_details.event_id', '=', 'events.id')
+            ->join('guests', 'guests.id', '=', 'guest_details.guest_id')
+            ->join('master_events', 'master_events.id', '=', 'events.event_master_id')
+            ->join('tickets', 'tickets.event_id', '=', 'events.id')
+            ->join('ticket_category_details', 'ticket_category_details.ticket_id', '=', 'tickets.id')
+            ->join('ticket_categories', 'ticket_category_details.ticket_category_id', '=', 'ticket_categories.id')
+            ->join('ticket_types','ricket_order')
+            ->where('events.id', $event->id)
+            ->groupBy('events.id', 'ticket_categories.ticket_category_name')
+            ->get();
+
+        return view('event.show', ['data'=>$data, 'groupedData'=>$grouppedData]);
     }
 
     /**

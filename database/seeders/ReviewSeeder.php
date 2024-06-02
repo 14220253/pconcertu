@@ -8,29 +8,24 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class MerchSeeder extends Seeder
+class ReviewSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $event = DB::table('events')->pluck('id');
         $faker = \Faker\Factory::create();
-        $size = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
-
+        $customer = DB::table('customers')->pluck('id');
+        $event = DB::table('events')->pluck('id');
         for ($i = 0; $i < 100; $i++) {
-            DB::table('merches')->insert([
-                'size' => $faker->randomElement($size),
-                'color' => $faker->colorName,
-                'product_picture'=> $faker->imageUrl(640,480,'fashion',true,null,false,'jpg'),
-                'variation' => $faker->word,
-                'stock' => $faker->numberBetween(0,50),
-                'description' => $faker->realText,
+            DB::table('reviews')->insert([
+                'review' => $faker->realText(500),
+                'stars' => $faker->numberBetween(0,5),
+                'customer_id' => $faker->randomElement($customer),
                 'event_id' => $faker->randomElement($event),
                 'created_at' =>'now',
                 'updated_at' =>'now'
-
             ]);
         }
     }

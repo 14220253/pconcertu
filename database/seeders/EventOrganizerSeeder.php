@@ -20,9 +20,11 @@ class EventOrganizerSeeder extends Seeder
         for ($i = 0; $i < 100; $i++) {
             DB::table('event_organizers')->insert([
                 'name' => $faker->name,
-                'email' => $faker->unique()->safeEmail,
+                'email' => $faker->unique()->companyEmail,
                 'password' => bcrypt($faker->password),
                 'phone' => '08' . str_pad(mt_rand(0, 9999999999), 10, '0', STR_PAD_LEFT),
+                'created_at' =>'now',
+                'updated_at' =>'now'
             ]);
         }
     }
