@@ -13,7 +13,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::query()->orderBy('id')->paginate(10);
+        $events = Event::query()->orderBy('id')->get();
         // dd($events);
         return view('event.index', ['events' => $events]);
     }
@@ -63,7 +63,7 @@ class EventController extends Controller
                 )
             ->where('events.id', $event->id)
             ->first();
-        $grouppedData = Event::query()
+        $groupedData = Event::query()
             ->select('tickets.price as price', 'ticket_categories.ticket_category_name')
             ->join('reviews', 'reviews.event_id', '=', 'events.id')
             ->join('event_organizers', 'event_organizers.id', '=', 'events.event_organizer_id')
@@ -73,12 +73,10 @@ class EventController extends Controller
             ->join('tickets', 'tickets.event_id', '=', 'events.id')
             ->join('ticket_category_details', 'ticket_category_details.ticket_id', '=', 'tickets.id')
             ->join('ticket_categories', 'ticket_category_details.ticket_category_id', '=', 'ticket_categories.id')
-            ->join('ticket_types','ricket_order')
             ->where('events.id', $event->id)
             ->groupBy('events.id', 'ticket_categories.ticket_category_name')
             ->get();
-
-        return view('event.show', ['data'=>$data, 'groupedData'=>$grouppedData]);
+        return view('event.show', ['data'=>$data, 'groupedData'=>$groupedData, 'event'=>$event->id]);
     }
 
     /**

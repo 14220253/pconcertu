@@ -9,9 +9,10 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <x-nav-link href="/eventlisting" :active="request()->is('eventlisting')">Home</x-nav-link>
+                        <x-nav-link href="{{ route('event.index') }}" :active="request()->is('event.index')">Home</x-nav-link>
                         <x-nav-link href="#" :active="request()->is('feeds')">Feeds</x-nav-link>
-                        <x-nav-link href="#" :active="request()->is('ticket')">My Transaction</x-nav-link>
+                        <x-nav-link href="{{ route('transaction_history.index', 1) }}" :active="request()->is('transaction_history.index')">My
+                            Transaction</x-nav-link>
                         <x-nav-link href="#" :active="request()->is('profile')">My Profile</x-nav-link>
                         {{-- <a href="#"
                             class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Feeds</a> --}}

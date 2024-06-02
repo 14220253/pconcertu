@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Event Detail</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <x-nav> </x-nav>
         <div>
             <div
-                class="w-full max-w-screen-lg mx-auto bg-white-100 flex flex-row justify-items-center align-item-center">
+                class="w-full max-w-screen-lg mx-auto my-10 bg-white-100 flex flex-row justify-items-center align-item-center">
                 <img class = "rounded-xl"
                     src="https://th.bing.com/th/id/OIP.lrbGqhDubOOFt6ONB9bnbwHaKn?rs=1&pid=ImgDetMain" alt="nirvana">
                 <div class="container px-4 mx-4 my-4">
@@ -69,7 +69,7 @@
             <div class="py-5 px-4">
                 <p class="text-2xl font-bold"> ADDITIONAL INFO </p>
             </div>
-            <div class="container flex flex-nowrap gap-8 row-3 overflow-auto mx-6">
+            <div class="container flex flex-nowrap gap-8 row-3 overflow-autos mx-6">
                 <a href=#><img
                         src="https://as2.ftcdn.net/v2/jpg/03/46/22/65/1000_F_346226539_j5OA9Fz1gspCbDnswc4liDPCydvZKvDu.jpg"
                         class="w-112 h-64 rounded-xl aspect-square"></img></a>
