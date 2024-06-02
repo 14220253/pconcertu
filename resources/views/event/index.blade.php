@@ -93,8 +93,10 @@
                     </a>
                 @endforeach
 
-                <!-- More products... -->
             </div>
+        </div>
+        <div class="container w-full mx-auto my-5 py-5 px-5 font-bold text-xl">
+            {{ $events->links() }}
         </div>
     </div>
 
