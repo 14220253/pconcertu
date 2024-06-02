@@ -112,10 +112,11 @@
             <p class="text-2xl font-bold"> REVIEW </p>
         </div>
         @foreach ($reviews as $review)
-            <div class="w-full bg-white px-4 py-4">
-                <div class="flex flex-row">
-                    <p class="text-xl font-bold">{{ $review->name }}</p>
-                    <p class="mx-5">{{ $review->rating }}</p>
+            <div class="w-full bg-white px-4 py-4 mx-5">
+                <div class="flex flex-row ">
+                    <p class="text-xl font-bold"> {{ $review->name }}</p>
+                    <p class="text-md font-normal mx-5">Customer Id: {{ $review->cust_id }}</p>
+                    <p class="mx-5">Rating: {{ $review->rating }}</p>
                 </div>
                 <p class="text-lg font-normal">{{ $review->review }}</p>
 

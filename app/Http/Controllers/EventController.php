@@ -79,7 +79,7 @@ class EventController extends Controller
             ->groupBy('events.id', 'ticket_categories.ticket_category_name')
             ->get();
             $reviews = Event::query()
-            ->select('customers.name as name', 'reviews.review as review', 'reviews.stars as rating')
+            ->select('customers.id as cust_id','customers.name as name', 'reviews.review as review', 'reviews.stars as rating')
             ->join('reviews', 'reviews.event_id', '=', 'events.id')
             ->join('event_organizers', 'event_organizers.id', '=', 'events.event_organizer_id')
             ->join('guest_details', 'guest_details.event_id', '=', 'events.id')
@@ -91,7 +91,7 @@ class EventController extends Controller
             ->join('ticket_order_details', 'ticket_order_details.ticket_id','=', 'tickets.id')
             ->join('customers','customers.id','=', 'ticket_order_details.customer_id' )
             ->where('events.id', $event->id)
-            ->groupBy('customers.name', 'reviews.stars', 'reviews.review')
+            ->groupBy('customers.id','customers.name', 'reviews.stars', 'reviews.review')
             ->get();
         return view('event.show', ['data'=>$data, 'groupedData'=>$groupedData, 'reviews'=>$reviews,'event'=>$event]);
     }
