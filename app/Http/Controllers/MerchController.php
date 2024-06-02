@@ -13,9 +13,10 @@ class MerchController extends Controller
      */
     public function index()
     {
-        
-        $merch = Merch::query()->orderBy('id')->paginate(10)->where('event_id', 33);
-        // dd($events);
+        $merch = Merch::query()
+        ->where('event_id', 5)
+        ->paginate(10);
+        // dd($merch);
         return view('merch.index', ['merches' => $merch]);
     }
 

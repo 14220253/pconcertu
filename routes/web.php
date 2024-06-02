@@ -63,9 +63,13 @@ Route::get('/ticket', function (){
 Route::get('/notification', function (){
     return view('notification');
 });
+Route::get('/checkout', function (){
+    return view('checkout');
+});
 Route::get('/merch', [MerchController::class, 'index'])->name('merch.index');
 Route::get('/merch/{merch}', [MerchController::class,'show'])->name('merch.show');
 Route::get('/transaction_history/{customer}', [TransactionHistoryController::class, 'index'])->name('transaction_history.index');
+Route::get('/payment_method', [PaymentMethodController::class, 'index'])->name('payment_method.index');
 
 Route::resource('event', EventController::class);
 Route::resource('ads', AdsController::class);
