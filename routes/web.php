@@ -63,8 +63,6 @@ Route::get('/ticket', function (){
 Route::get('/notification', function (){
     return view('notification');
 });
-Route::get('/event', [EventController::class, 'index'])->name('event.index');
-Route::get('/event/{event}', [EventController::class,'show'])->name('event.show');
 Route::get('/merch', [MerchController::class, 'index'])->name('merch.index');
 Route::get('/merch/{merch}', [MerchController::class,'show'])->name('merch.show');
 Route::get('/transaction_history/{customer}', [TransactionHistoryController::class, 'index'])->name('transaction_history.index');

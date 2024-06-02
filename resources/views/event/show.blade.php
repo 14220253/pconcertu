@@ -108,12 +108,20 @@
                     </div> --}}
             </div>
         </div>
+        <div class="py-5 px-4">
+            <p class="text-2xl font-bold"> REVIEW </p>
+        </div>
+        @foreach ($reviews as $review)
+            <div class="w-full bg-white px-4 py-4">
+                <div class="flex flex-row">
+                    <p class="text-xl font-bold">{{ $review->name }}</p>
+                    <p class="mx-5">{{ $review->rating }}</p>
+                </div>
+                <p class="text-lg font-normal">{{ $review->review }}</p>
 
 
+            </div>
+        @endforeach
     </body>
 
     </html>
-
-</body>
-
-</html>

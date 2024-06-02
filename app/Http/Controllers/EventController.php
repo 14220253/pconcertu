@@ -13,7 +13,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::query()->orderBy('id')->get();
+        $events = Event::query()->orderBy('id')->paginate(24);
         // dd($events);
         return view('event.index', ['events' => $events]);
     }
@@ -49,7 +49,8 @@ class EventController extends Controller
             ->join('ticket_category_details', 'ticket_category_details.ticket_id','=','tickets.id') //mengambil tipe tiket
             ->join('ticket_categories', 'ticket_category_details.ticket_category_id','=','ticket_categories.id')
             ->select(
-                'reviews.*',
+                'reviews.review as review',
+                'reviews.stars as rating',
                 'master_events.name as event_name',
                 'tickets.price as price',
                 'events.location as location',
@@ -62,9 +63,10 @@ class EventController extends Controller
                 'events.id as event_id'
                 )
             ->where('events.id', $event->id)
+            ->groupBy('events.id')
             ->first();
         $groupedData = Event::query()
-            ->select('tickets.price as price', 'ticket_categories.ticket_category_name')
+            ->select('tickets.price as price', 'ticket_categories.ticket_category_name', 'reviews.review as review', 'reviews.stars as star')
             ->join('reviews', 'reviews.event_id', '=', 'events.id')
             ->join('event_organizers', 'event_organizers.id', '=', 'events.event_organizer_id')
             ->join('guest_details', 'guest_details.event_id', '=', 'events.id')
@@ -76,7 +78,22 @@ class EventController extends Controller
             ->where('events.id', $event->id)
             ->groupBy('events.id', 'ticket_categories.ticket_category_name')
             ->get();
-        return view('event.show', ['data'=>$data, 'groupedData'=>$groupedData, 'event'=>$event->id]);
+            $reviews = Event::query()
+            ->select('customers.name as name', 'reviews.review as review', 'reviews.stars as rating')
+            ->join('reviews', 'reviews.event_id', '=', 'events.id')
+            ->join('event_organizers', 'event_organizers.id', '=', 'events.event_organizer_id')
+            ->join('guest_details', 'guest_details.event_id', '=', 'events.id')
+            ->join('guests', 'guests.id', '=', 'guest_details.guest_id')
+            ->join('master_events', 'master_events.id', '=', 'events.event_master_id')
+            ->join('tickets', 'tickets.event_id', '=', 'events.id')
+            ->join('ticket_category_details', 'ticket_category_details.ticket_id', '=', 'tickets.id')
+            ->join('ticket_categories', 'ticket_category_details.ticket_category_id', '=', 'ticket_categories.id')
+            ->join('ticket_order_details', 'ticket_order_details.ticket_id','=', 'tickets.id')
+            ->join('customers','customers.id','=', 'ticket_order_details.customer_id' )
+            ->where('events.id', $event->id)
+            ->groupBy('customers.name', 'reviews.stars', 'reviews.review')
+            ->get();
+        return view('event.show', ['data'=>$data, 'groupedData'=>$groupedData, 'reviews'=>$reviews,'event'=>$event]);
     }
 
     /**
