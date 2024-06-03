@@ -22,14 +22,35 @@
                     <table class="w-full">
                         <thead>
                             <tr>
-                                <th class="text-left font-semibold">Product</th>
+                                <th class="text-left font-semibold">Event</th>
                                 <th class="text-left font-semibold">Price</th>
                                 <th class="text-left font-semibold">Quantity</th>
                                 <th class="text-left font-semibold">Total</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <x-checkout-card></x-checkout-card>
+                        <tr>
+    <td class="py-4">
+        <div class="flex items-center">
+            <img class="h-16 w-16 mr-4" src="https://th.bing.com/th/id/OIP.lrbGqhDubOOFt6ONB9bnbwHaKn?rs=1&pid=ImgDetMain"
+                alt="Product image">
+            <span class="font-semibold">Nirvana Nevermind</span>
+        </div>
+    </td>
+    <td class="py-4">Rp 5 000 000</td>
+    <td class="py-4">
+        <div class="flex items-center" x-data="{ amount: 1 }">
+            <button @click="amount= Math.max(0,amount-1)"
+                class="border rounded-md py-2 px-4 mr-2 text-black hover:bg-indigo-600 hover:text-white">-</button>
+            <span class="text-center w-8" x-text="amount"></span>
+            <button @click="amount= amount+1"
+                class="border rounded-md py-2 px-4 ml-2 text-black hover:bg-indigo-600 hover:text-white">+</button>
+        </div>
+    </td>
+    <td class="py-4">$190.99
+    </td>
+</tr>
+
                             <!-- More product rows -->
                         </tbody>
                     </table>
@@ -40,20 +61,16 @@
                     <h2 class="text-lg font-semibold mb-4">Summary</h2>
                     <div class="flex justify-between mb-2">
                         <span>Subtotal</span>
-                        <span>$19.99</span>
+                        <span>$190.99</span>
                     </div>
                     <div class="flex justify-between mb-2">
                         <span>Taxes</span>
                         <span>$1.99</span>
                     </div>
-                    <div class="flex justify-between mb-2">
-                        <span>Shipping</span>
-                        <span>$0.00</span>
-                    </div>
                     <hr class="my-2">
                     <div class="flex justify-between mb-2">
                         <span class="font-semibold">Total</span>
-                        <span class="font-semibold">$21.98</span>
+                        <span class="font-semibold">$192.98</span>
                     </div>
                     <button class="bg-indigo-600 text-white py-2 px-4 rounded-lg mt-4 w-full"><a href="/payment_method">Checkout</a></button>
                 </div>

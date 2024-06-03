@@ -61,6 +61,9 @@ Route::get('/checkout', function (){
 Route::get('/ticket', function (){
     return view('ticket_type.index');
 });
+Route::get('/echeckout', function (){
+    return view('eventcheckout');
+});
 
 Route::get('/notification', function (){
     return view('notification');

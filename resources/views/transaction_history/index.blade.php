@@ -67,7 +67,6 @@
         @endforeach
     </div>
     @foreach ($data as $dat)
-        {{ dd($dat->event_id) }} <!-- Check if event_id is correctly set -->
         <a href="{{ route('merch.index', ['event_id' => $dat->event_id]) }}">Order Merch</a>
     @endforeach
 

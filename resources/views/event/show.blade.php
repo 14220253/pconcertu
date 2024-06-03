@@ -61,8 +61,7 @@
                         </table>
                     </div>
                     <button
-                        class="w-full bg-indigo-700 py-4 px-4 rounded-xl text-white hover:bg-indigo-300 hover:text-black">Buy
-                        Ticket</button>
+                        class="w-full bg-indigo-700 py-4 px-4 rounded-xl text-white hover:bg-indigo-300 hover:text-black"><a href="/echeckout">Buy Ticket</a></button>
                 </div>
 
             </div>
