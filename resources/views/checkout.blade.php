@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
-    @vite('resources/css/app.css');
+    @vite('resources/css/app.css')
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -55,7 +55,7 @@
                         <span class="font-semibold">Total</span>
                         <span class="font-semibold">$21.98</span>
                     </div>
-                    <button class="bg-indigo-600 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
+                    <button class="bg-indigo-600 text-white py-2 px-4 rounded-lg mt-4 w-full"><a href="\payment_method">Checkout</a></button>
                 </div>
             </div>
         </div>

@@ -69,8 +69,13 @@ Route::get('/notification', function (){
 Route::get('/merch/event/{event_id}', [MerchController::class, 'index'])->name('merch.index');
 
 
+Route::get('/checkout', function (){
+    return view('checkout');
+});
+Route::get('/merch', [MerchController::class, 'index'])->name('merch.index');
 Route::get('/merch/{merch}', [MerchController::class,'show'])->name('merch.show');
 Route::get('/transaction_history/{customer}', [TransactionHistoryController::class, 'index'])->name('transaction_history.index');
+Route::get('/payment_method', [PaymentMethodController::class, 'index'])->name('payment_method.index');
 
 Route::post('review', [ReviewController::class, 'store'])->name('review.store');
 Route::post('review/{customer_id}/{event_id}/create', [ReviewController::class, 'create'])->name('review.create');
