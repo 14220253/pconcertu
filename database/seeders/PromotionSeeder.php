@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class PromotionSeeder extends Seeder
 {
@@ -22,8 +23,8 @@ class PromotionSeeder extends Seeder
                 'amount' => $faker->numberBetween(5,60),
                 'code' => $faker->word,
                 'periods' => $faker->date('Y-m-d'),
-                'created_at' =>'now',
-                'updated_at' =>'now'
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('merch_orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('ticket_id')->constrained('tickets');
             $table->timestamps();
         });
     }

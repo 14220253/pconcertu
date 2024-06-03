@@ -45,8 +45,15 @@
                         {{ $dat->name }}</p>
                     <div class="flex items-center justify-between pt-5">
                         <div class="flex itemms-center">
-                            <button class="bg-indigo-600 rounded-xl py-3 px-4 text-white">
-                                Order Merch</button>
+
+
+                            <a class="bg-indigo-600 rounded-xl py-3 px-4 mx-2 text-white"
+                                href="{{ route('merch.index', $dat->event_id) }}">Order Merch</a>
+                            <form method="post" action="{{ route('review.create', [$customer_id, $dat->event_id]) }}">
+                                @csrf
+                                <button class="bg-indigo-600 rounded-xl py-3 px-4 mx-2 text-white">
+                                    Review</button>
+                            </form>
                             {{-- <p class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">Remove
                                         </p> --}}
                         </div>
@@ -59,6 +66,10 @@
             </div>
         @endforeach
     </div>
+    @foreach ($data as $dat)
+        {{ dd($dat->event_id) }} <!-- Check if event_id is correctly set -->
+        <a href="{{ route('merch.index', ['event_id' => $dat->event_id]) }}">Order Merch</a>
+    @endforeach
 
 </body>
 

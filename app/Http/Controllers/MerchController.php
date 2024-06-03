@@ -11,13 +11,15 @@ class MerchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        
-        $merch = Merch::query()->orderBy('id')->paginate(10);
-        // dd($events);
-        return view('merch.index', ['merches' => $merch]);
-    }
+    public function index($event_id)
+{
+    $merch = Merch::query()
+        ->where('event_id', $event_id)
+        ->orderBy('id')
+        ->paginate(10);
+
+    return view('merch.index', ['merches' => $merch]);
+}
 
     /**
      * Show the form for creating a new resource.

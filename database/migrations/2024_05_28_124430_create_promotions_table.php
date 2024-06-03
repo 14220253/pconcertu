@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer('amount');
             $table->string('code');
             $table->integer('periods');
-
             $table->id();
             $table->timestamps();
         });

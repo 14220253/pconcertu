@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class EventOrganizerSeeder extends Seeder
 {
@@ -23,8 +24,8 @@ class EventOrganizerSeeder extends Seeder
                 'email' => $faker->unique()->companyEmail,
                 'password' => bcrypt($faker->password),
                 'phone' => '08' . str_pad(mt_rand(0, 9999999999), 10, '0', STR_PAD_LEFT),
-                'created_at' =>'now',
-                'updated_at' =>'now'
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

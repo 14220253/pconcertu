@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class TicketCategoryDetailSeeder extends Seeder
 {
@@ -23,8 +24,8 @@ class TicketCategoryDetailSeeder extends Seeder
             DB::table('ticket_category_details')->insert([
                 'ticket_category_id' => $faker->randomElement($category),
                 'ticket_id' => $faker->randomElement($ticket),
-                'created_at' =>'now',
-                'updated_at' =>'now'
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

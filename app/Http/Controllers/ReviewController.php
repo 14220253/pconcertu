@@ -21,7 +21,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('review.create');
     }
 
     /**
@@ -29,7 +29,14 @@ class ReviewController extends Controller
      */
     public function store(StoreReviewRequest $request)
     {
-        //
+        $data = $request->validate([
+            'stars' => ['required','between:min,max'],
+            'review' => ['required', 'string']
+        ]);
+        $data['customer_id'] = 1;
+        $data['event_id'] = 1;
+        $review = Review::create($data);
+        return to_route('transaction_history.index', $review)->with('message', 'Review posted');
     }
 
     /**

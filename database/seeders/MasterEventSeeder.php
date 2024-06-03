@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class MasterEventSeeder extends Seeder
 {
@@ -20,8 +21,8 @@ class MasterEventSeeder extends Seeder
         for ($i = 0; $i < 100; $i++) {
             DB::table('master_events')->insert([
                 'name' => $faker->name,
-                'created_at' =>'now',
-                'updated_at' =>'now'
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

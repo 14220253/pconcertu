@@ -23,7 +23,8 @@ use App\Http\Controllers\{
     MerchOrderDetailController,
     AdsAcceptanceHistoryController,
     MasterEventController,
-    AdsDetailController
+    AdsDetailController,
+    ReviewController
 };
 use GuzzleHttp\Promise\Create;
 
@@ -60,12 +61,19 @@ Route::get('/checkout', function (){
 Route::get('/ticket', function (){
     return view('ticket_type.index');
 });
+
 Route::get('/notification', function (){
     return view('notification');
-});
-Route::get('/merch', [MerchController::class, 'index'])->name('merch.index');
+})->name('notification');
+
+Route::get('/merch/event/{event_id}', [MerchController::class, 'index'])->name('merch.index');
+
+
 Route::get('/merch/{merch}', [MerchController::class,'show'])->name('merch.show');
 Route::get('/transaction_history/{customer}', [TransactionHistoryController::class, 'index'])->name('transaction_history.index');
+
+Route::post('review', [ReviewController::class, 'store'])->name('review.store');
+Route::post('review/{customer_id}/{event_id}/create', [ReviewController::class, 'create'])->name('review.create');
 
 Route::resource('event', EventController::class);
 Route::resource('ads', AdsController::class);
@@ -78,7 +86,7 @@ Route::resource('tikcet_order_detail', TicketOrderDetailController::class);
 Route::resource('ticket_category', TicketCategoryController::class);
 Route::resource('ticket_type', TicketTypeController::class);
 Route::resource('ticket_category_detail', TicketCategoryDetailController::class);
-Route::resource('merch', MerchController::class);
+// Route::resource('merch', MerchController::class);
 Route::resource('merch_order', MerchOrderController::class);
 Route::resource('merch_order_detail', MerchOrderDetailController::class);
 Route::resource('event_organizer', EventOrganizerController::class);

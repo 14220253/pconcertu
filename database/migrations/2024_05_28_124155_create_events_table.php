@@ -15,8 +15,8 @@ return new class extends Migration
             $table->dateTime('periods');
             $table->longText('location');
             $table->boolean('isGoPlus');
-            $table->binary('denah');
-            $table->binary('poster');
+            $table->longText('denah');
+            $table->longText('poster');
             $table->foreignId('event_master_id')->constrained('master_events');
             $table->foreignId('event_organizer_id')->constrained('event_organizers');
             $table->date('date');

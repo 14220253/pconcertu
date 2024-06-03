@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-
+use Carbon\Carbon;
 class ReviewSeeder extends Seeder
 {
     /**
@@ -24,8 +24,8 @@ class ReviewSeeder extends Seeder
                 'stars' => $faker->numberBetween(0,5),
                 'customer_id' => $faker->randomElement($customer),
                 'event_id' => $faker->randomElement($event),
-                'created_at' =>'now',
-                'updated_at' =>'now'
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

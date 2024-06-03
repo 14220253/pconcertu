@@ -15,7 +15,6 @@ return new class extends Migration
             $table->longText('name');
             $table->longText('password');
             $table->longText('username');
-
             $table->id();
             $table->timestamps();
         });

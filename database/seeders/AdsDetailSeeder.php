@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class AdsDetailSeeder extends Seeder
 {
@@ -20,6 +21,8 @@ class AdsDetailSeeder extends Seeder
                 'periods' => rand(0,20),
                 'ads_status' => Str::random(7),
                 'price' => rand(100000, 500000),
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

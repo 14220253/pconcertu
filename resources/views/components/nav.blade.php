@@ -136,3 +136,8 @@
         </div>
     </div>
 </nav>
+@session('message')
+    <div class="w-full bg-indigo-500">
+        <p class="text-white">{{ session('message') }}</p>
+    </div>
+@endsession
