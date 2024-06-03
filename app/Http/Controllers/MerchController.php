@@ -14,7 +14,7 @@ class MerchController extends Controller
     public function index()
     {
         $merch = Merch::query()
-        ->where('event_id', 5)
+        ->where('event_id', 42)
         ->paginate(10);
         // dd($merch);
         return view('merch.index', ['merches' => $merch]);
