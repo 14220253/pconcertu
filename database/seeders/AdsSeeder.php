@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class AdsSeeder extends Seeder
 {
@@ -15,10 +16,13 @@ class AdsSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = \Faker\Factory::create();
         for ($i = 0; $i < 100; $i++) {
             DB::table('ads')->insert([
-                'title' => Str::random(rand(5, 12)),
-                'description' => Str::random(rand(50, 200)),
+                'title' => $faker->longText(100),
+                'description' => $faker->longText(1000),
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

@@ -5,15 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 
 class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        return view('customer.edit', [
+            'id' => $request->id(),
+        ]);
     }
 
     /**
@@ -21,7 +28,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**

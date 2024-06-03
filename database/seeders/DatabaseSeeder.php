@@ -27,10 +27,6 @@ class DatabaseSeeder extends Seeder
             GuestSeeder::class,
             GuestDetailSeeder::class,
 
-            MerchSeeder::class,
-            MerchOrderSeeder::class,
-            MerchOrderDetailSeeder::class,
-
             TicketTypeSeeder::class,
 
             SeatSeeder::class,
@@ -41,6 +37,12 @@ class DatabaseSeeder extends Seeder
             TicketCategoryDetailSeeder::class,
 
             TicketOrderDetailSeeder::class,
+
+            MerchSeeder::class,
+            MerchOrderSeeder::class,
+            MerchOrderDetailSeeder::class,
+
+
 
             PromotionSeeder::class,
             PromotionDetailSeeder::class,

@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('merches', function (Blueprint $table) {
             $table->json('size');
             $table->json('color');
-            $table -> json('variation');
+            $table ->json('variation');
             $table->integer('stock');
             $table->longText('description');
             $table->binary('product_picture');
             $table->foreignId('event_id')->constrained('events');
-
+            $table->string('name');
+            $table->bigInteger('price');
             $table->id();
             $table->timestamps();
         });

@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class MerchSeeder extends Seeder
 {
@@ -21,15 +22,16 @@ class MerchSeeder extends Seeder
 
         for ($i = 0; $i < 100; $i++) {
             DB::table('merches')->insert([
-                'size' => $faker->randomElement($size),
-                'color' => $faker->colorName,
-                'product_picture'=> $faker->imageUrl(640,480,'fashion',true,null,false,'jpg'),
+                'size' => [$faker->randomElement($size), $faker->randomElement($size), $faker->randomElement($size)],
+                'color' => [$faker->colorName, $faker->colorName, $faker->colorName],
+                'product_picture' => $faker->imageUrl(640, 480, 'fashion', true, null, false, 'jpg'),
                 'variation' => $faker->word,
-                'stock' => $faker->numberBetween(0,50),
+                'stock' => $faker->numberBetween(0, 50),
+                'name' => $faker->lastName,
                 'description' => $faker->realText,
                 'event_id' => $faker->randomElement($event),
-                'created_at' =>'now',
-                'updated_at' =>'now'
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
 
             ]);
         }

@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class GuestDetailSeeder extends Seeder
 {
@@ -25,7 +26,9 @@ class GuestDetailSeeder extends Seeder
             DB::table('guest_details')->insert([
                 'role' => $faker->word,
                 'event_id' => $faker->randomElement($event),
-                'guest_id' => $faker->randomElement($guest)
+                'guest_id' => $faker->randomElement($guest),
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
 
             ]);
         }

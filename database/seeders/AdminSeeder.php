@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 class AdminSeeder extends Seeder
 {
     /**
@@ -19,6 +20,8 @@ class AdminSeeder extends Seeder
                 'name' => Str::random(10),
                 'password' => Hash::make('password'),
                 'username' => Str::random(rand(4,6)),
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

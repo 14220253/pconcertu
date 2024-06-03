@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class TicketSeeder extends Seeder
 {
@@ -26,8 +27,8 @@ class TicketSeeder extends Seeder
                 'review' => $faker->realText(200),
                 'event_id' => $faker->randomElement($event),
                 'payment_method_id' => $faker->randomElement($paymentMethod),
-                'created_at' =>'now',
-                'updated_at' =>'now'
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

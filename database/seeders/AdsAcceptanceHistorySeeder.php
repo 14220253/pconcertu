@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 class AdsAcceptanceHistorySeeder extends Seeder
 {
     /**
@@ -24,6 +25,8 @@ class AdsAcceptanceHistorySeeder extends Seeder
             $randomWord = ($randomNumber == 0) ? $word1 : (($randomNumber == 1) ? $word2 : $word3);
             DB::table('ads_acceptance_histories')->insert([
                 'status' => $randomWord,
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->integer('periods');
             $table->string('ads_status');
             $table->bigInteger('price');
-
+            $table->boolean('status');
             $table->id();
             $table->timestamps();
         });

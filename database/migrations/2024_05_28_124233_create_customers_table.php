@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone_number');
             $table->string('NIK');
-
             $table->id();
             $table->timestamps();
         });

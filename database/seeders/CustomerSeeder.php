@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class CustomerSeeder extends Seeder
 {
@@ -26,6 +27,8 @@ class CustomerSeeder extends Seeder
                 'password' => bcrypt($faker->password),
                 'phone_number' => '08' . str_pad(mt_rand(0, 9999999999), 10, '0', STR_PAD_LEFT),
                 'NIK' => $nik,
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

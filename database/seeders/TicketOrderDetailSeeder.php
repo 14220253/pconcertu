@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class TicketOrderDetailSeeder extends Seeder
 {
@@ -28,8 +29,8 @@ class TicketOrderDetailSeeder extends Seeder
                 'ticket_id' => $faker->randomElement($ticket),
                 'ticket_type_id' => $faker->randomElement($type),
                 'seat_id' => $faker->randomElement($seat),
-                'created_at' =>'now',
-                'updated_at' =>'now'
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }

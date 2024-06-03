@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class PaymentMethodSeeder extends Seeder
 {
@@ -20,8 +21,8 @@ class PaymentMethodSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             DB::table('payment_methods')->insert([
                 'payment_method_name' => $faker->company,
-                'created_at' =>'now',
-                'updated_at' =>'now'
+                'created_at' =>Carbon::now(),
+                'updated_at' =>Carbon::now()
             ]);
         }
     }
