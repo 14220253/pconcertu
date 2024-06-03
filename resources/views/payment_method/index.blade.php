@@ -16,10 +16,12 @@
 <div class="bg-gray-100 h-screen py-8">
     <div class="container mx-auto px-4">
         <h1 class="text-2xl font-semibold mb-4">Payment Method</h1>
-        <h3 class="text-2xl font-semibold mb-4"><a href="/event">LinkAja!</a></h3>
-        <h3 class="text-2xl font-semibold mb-4"><a href="/event">BCA Virtual Account</a></h3>
-        <h3 class="text-2xl font-semibold mb-4"><a href="/event">GoPay</a></h3>
-        <h3 class="text-2xl font-semibold mb-4"><a href="/event">OVO</a></h3>
-        <h3 class="text-2xl font-semibold mb-4"><a href="/event">ShopeePay</a></h3>
+        <button class="text-2xl px-4 py-4 rounded-xl w-full bg-indigo-500 text-white font-semibold mb-4"><a href="/event">LinkAja!</a></button>
+        <button class="text-2xl px-4 py-4 rounded-xl w-full bg-blue-500 text-white font-semibold mb-4"><a href="/event">BCA Virtual Account</a></button>
+        <button class="text-2xl px-4 py-4 rounded-xl w-full bg-red-500 text-white font-semibold mb-4"><a href="/event">Credit Card</a></button>
+        <button class="text-2xl px-4 py-4 rounded-xl w-full bg-purple-500 text-white font-semibold mb-4"><a href="/event">OVO</a></button>
+        <button class="text-2xl px-4 py-4 rounded-xl w-full bg-green-500 text-white font-semibold mb-4"><a href="/event">GoPay</a></button>
+        <button class="text-2xl px-4 py-4 rounded-xl w-full bg-orange-500 text-white font-semibold mb-4"><a href="/event">Shopee Pay</a></button>
+
     </div>
 </div>
